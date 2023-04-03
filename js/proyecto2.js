@@ -50,13 +50,13 @@ const mostrarUsuarios = () => {
 };
 
 const eliminarUusario = (id) => {
-  console.Log(id);
   const usuario = usuarios.find((usuario) => usuario.id === id)
   const index = usuarios.indexOf(usuario)
   usuarios.splice(index, 1)
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   mostrarUsuarios();
 };
+
 
 window.addEventListener("loas",mostrarUsuarios);
 
