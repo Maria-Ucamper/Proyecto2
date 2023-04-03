@@ -1,3 +1,5 @@
+const nombre = document.getElementById("nombreInput");
+const apellido = document.getElementById("apellidoInput");
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 const cuerpoTabla = document.getElementById("cuerpoTabla");
 
@@ -48,12 +50,15 @@ const mostrarUsuarios = () => {
 };
 
 const eliminarUusario = (id) => {
+  console.Log(id);
   const usuario = usuarios.find((usuario) => usuario.id === id)
   const index = usuarios.indexOf(usuario)
   usuarios.splice(index, 1)
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   mostrarUsuarios();
 };
+
+window.addEventListener("loas",mostrarUsuarios);
 
 const editarUsuario = (id) => {
   btnAgregar.style.display = "none";
